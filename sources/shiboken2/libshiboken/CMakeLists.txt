@@ -1,19 +1,7 @@
 project(libshiboken)
 
 macro(get_numpy_location)
-    execute_process(
-      COMMAND ${PYTHON_EXECUTABLE} -c "if True:
-      import sys
-      import os
-      numpy = ''
-      for p in sys.path:
-          if 'site-' in p:
-              numpy = os.path.join(p, 'numpy')
-              if os.path.exists(numpy):
-                  print(os.path.realpath(numpy))
-                  break"
-      OUTPUT_VARIABLE PYTHON_NUMPY_LOCATION
-      OUTPUT_STRIP_TRAILING_WHITESPACE)
+  set(PYTHON_NUMPY_LOCATION "")
   message(STATUS "PYTHON_NUMPY_LOCATION: " ${PYTHON_NUMPY_LOCATION})
 endmacro()
 
