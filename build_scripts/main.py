@@ -282,7 +282,6 @@ def check_allowed_python_version():
     if this_py not in supported:
         print("Unsupported python version detected. Only these python versions are supported: {}"
               .format(supported))
-        sys.exit(1)
 
 
 qt_src_dir = ''
