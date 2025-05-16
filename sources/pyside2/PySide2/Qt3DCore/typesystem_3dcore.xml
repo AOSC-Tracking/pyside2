@@ -43,6 +43,7 @@
 <typesystem package="PySide2.Qt3DCore">
     <load-typesystem name="QtGui/typesystem_gui.xml" generate="no"/>
     <namespace-type name="Qt3DCore" generate-using="no">
+      <include file-name="Qt3DCore/QNodeCommand" location="global" />
         <enum-type name="ChangeFlag" flags="ChangeFlags"/>
         <object-type name="QAbstractAspect"/>
         <object-type name="QAbstractSkeleton" since="5.10"/>
@@ -58,6 +59,7 @@
         <object-type name="QAspectJob"/>
         <object-type name="QBackendNode">
             <enum-type name="Mode"/>
+            <include file-name="Qt3DCore/QNodeCommand" location="global" />
         </object-type>
         <!-- TODO: Solve issues related to windows and a unresolved
             external symbol
@@ -82,6 +84,7 @@
         </object-type>
         <object-type name="QNode">
             <enum-type name="PropertyTrackingMode"/>
+            <include file-name="Qt3DCore/QNodeCommand" location="global" />
         </object-type>
         <object-type name="QNodeCommand" since="5.10"/>
         <object-type name="QNodeCreatedChangeBase"/>
