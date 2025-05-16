@@ -51,6 +51,9 @@
 #include <QtCore/QMetaType>
 #include <QtCore/QHash>
 
+#include <Qt3DCore/QNodeCommand>
+using Qt3DCore::QNodeCommand;
+
 struct SbkObjectType;
 
 namespace PySide
