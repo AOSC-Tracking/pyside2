@@ -111,7 +111,7 @@ target_include_directories(libshiboken PUBLIC
 )
 
 if (NOT "${PYTHON_NUMPY_LOCATION}" STREQUAL "")
-    target_include_directories(libshiboken PRIVATE ${PYTHON_NUMPY_LOCATION}/core/include)
+    target_include_directories(libshiboken PRIVATE ${PYTHON_NUMPY_LOCATION}/_core/include)
     target_compile_definitions(libshiboken PRIVATE -DHAVE_NUMPY
                                            PRIVATE -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION)
 
