@@ -23,7 +23,7 @@ instructions:
     userMessageOnFailure: >
         Failed to execute test instructions on osx
   - type: ExecuteCommand
-    command: "python -u coin_test_instructions.py --os={{.Env.CI_OS}} {{.Env.CI_PACKAGING_FEATURE}} --instdir=/Users/qt/work/install --targetOs={{.Env.CI_OS}} --hostArch=X86_64 --targetArch=X86_64-ARM64"
+    command: "python3 -u coin_test_instructions.py --os={{.Env.CI_OS}} {{.Env.CI_PACKAGING_FEATURE}} --instdir=/Users/qt/work/install --targetOs={{.Env.CI_OS}} --hostArch=X86_64 --targetArch=X86_64-ARM64"
     maxTimeInSeconds: 14400
     maxTimeBetweenOutput: 1200
     enable_if:

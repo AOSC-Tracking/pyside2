@@ -146,5 +146,34 @@ instructions:
          condition: property
          property: host.os
          equals_value: MacOS
-
+    - type: ExecuteCommand
+      command: "curl https://ci-files01-hki.ci.qt.io/input/qtforpython/fix_certs.py -o fix_certs.py"
+      maxTimeInSeconds: 14400
+      maxTimeBetweenOutput: 1200
+      enable_if:
+         condition: property
+         property: host.osVersion
+         equals_value: MacOS_11
+      userMessageOnFailure: >
+           Failed to download cert fix script
+    - type: ExecuteCommand
+      command: "sudo python3 fix_certs.py"
+      maxTimeInSeconds: 14400
+      maxTimeBetweenOutput: 1200
+      enable_if:
+         condition: property
+         property: host.osVersion
+         equals_value: MacOS_11
+      userMessageOnFailure: >
+           Failed to run cert fix script
+    - type: ExecuteCommand
+      command: "brew uninstall pkgconfig"
+      maxTimeInSeconds: 14400
+      maxTimeBetweenOutput: 1200
+      enable_if:
+         condition: property
+         property: host.osVersion
+         equals_value: MacOS_11
+      userMessageOnFailure: >
+           Failed to uninstall pkgconfig
 
